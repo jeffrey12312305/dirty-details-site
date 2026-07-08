@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, NavLink, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import { blogPosts, coatingOptions, navLinks, packages, services, site, testimonials } from './data';
 
 function Header() {
@@ -300,23 +300,33 @@ function FollowBlock() {
   );
 }
 
+function AnimatedRoutes() {
+  const location = useLocation()
+
+  return (
+    <div className="page-transition" key={location.pathname}>
+      <Routes location={location}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/ceramic-coating" element={<CeramicCoating />} />
+        <Route path="/packages" element={<Packages />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/store" element={<Store />} />
+      </Routes>
+    </div>
+  )
+}
+
 export default function App() {
   return (
     <BrowserRouter>
       <div id="top" className="app-shell">
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/ceramic-coating" element={<CeramicCoating />} />
-          <Route path="/packages" element={<Packages />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/store" element={<Store />} />
-        </Routes>
+        <AnimatedRoutes />
         <Footer />
       </div>
     </BrowserRouter>
-  );
+  )
 }
