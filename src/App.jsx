@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react'
 import { BrowserRouter, Link, NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import { navLinks, packages, services, site, testimonials } from './data';
 
@@ -227,6 +228,17 @@ function Packages() {
 }
 
 function Contact() {
+  const photoInputRef = useRef(null)
+  const [hasPhotos, setHasPhotos] = useState(false)
+
+  function clearPhotos() {
+    if (photoInputRef.current) {
+      photoInputRef.current.value = ''
+    }
+
+    setHasPhotos(false)
+  }
+
   return (
     <PageShell eyebrow="Get In Touch" title="Contact me">
       <section className="section contact-grid">
@@ -239,8 +251,8 @@ function Contact() {
           <label>First name<input name="firstName" type="text" required /></label>
           <label>Last name<input name="lastName" type="text" /></label>
           <label>Your email<input name="email" type="email" required /></label>
-          <label>
-  Vehicle type
+<label>
+  Vehicle type (Please Choose One)
   <select name="vehicleType" required defaultValue="">
     <option value="" disabled>Select vehicle type</option>
     <option value="Sedan">Sedan</option>
@@ -252,14 +264,29 @@ function Contact() {
 
 
           <label>Your message (Include Specific Concerns)<textarea name="message" rows="6" required /></label>
-          <label>
+<label>
   Vehicle photos
-  <input
-    name="photos"
-    type="file"
-    accept="image/png, image/jpeg, image/webp"
-    multiple
-  />
+  <div className="file-upload-wrap">
+    <input
+      ref={photoInputRef}
+      name="photos"
+      type="file"
+      accept="image/png, image/jpeg, image/webp"
+      multiple
+      onChange={(event) => setHasPhotos(event.target.files.length > 0)}
+    />
+
+    {hasPhotos && (
+      <button
+        className="file-clear-btn"
+        type="button"
+        aria-label="Remove selected photos"
+        onClick={clearPhotos}
+      >
+        ×
+      </button>
+    )}
+  </div>
 </label>
           <button className="primary-btn" type="submit">Send Message</button>
         </form>

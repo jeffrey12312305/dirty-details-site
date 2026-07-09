@@ -604,3 +604,36 @@ textarea {
   margin-right: 1rem;
   cursor: pointer;
 }
+
+.file-upload-wrap {
+  position: relative;
+}
+
+.file-upload-wrap input[type="file"] {
+  padding-right: 4rem;
+}
+
+.file-clear-btn {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.6rem;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.file-clear-btn:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.12);
+}
+
+.contact-form button,
+.primary-btn {
+  cursor: pointer;
+}
