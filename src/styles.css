@@ -463,3 +463,21 @@ textarea {
     transition: none !important;
   }
 }
+
+.social-row a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.social-row a:hover {
+  transform: scale(1.08);
+}
+
+.small-hero h1 {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}

@@ -1,5 +1,5 @@
 import { BrowserRouter, Link, NavLink, Route, Routes, useLocation } from 'react-router-dom';
-import { blogPosts, coatingOptions, navLinks, packages, services, site, testimonials } from './data';
+import { navLinks, packages, services, site, testimonials } from './data';
 
 function Header() {
   return (
@@ -22,6 +22,25 @@ function Header() {
   );
 }
 
+function SocialLinks({ className = '' }) {
+  const links = [
+    ['TikTok', site.socials.tiktok],
+    ['Facebook', site.socials.facebook],
+    ['Instagram', site.socials.instagram],
+    ['YouTube', site.socials.youtube]
+  ];
+
+  return (
+    <div className={`social-row ${className}`}>
+      {links.map(([label, url]) => (
+        <a key={label} href={url} target="_blank" rel="noreferrer">
+          {label}
+        </a>
+      ))}
+    </div>
+  );
+}
+
 function Footer() {
   return (
     <footer className="footer">
@@ -29,11 +48,7 @@ function Footer() {
         <div>
           <h3>{site.name}</h3>
           <p>{site.tagline}</p>
-          <div className="social-row">
-            <a href={site.socials.facebook}>Facebook</a>
-            <a href={site.socials.instagram}>Instagram</a>
-            <a href={site.socials.youtube}>YouTube</a>
-          </div>
+          <SocialLinks />
         </div>
         <div>
           <h4>Address</h4>
@@ -91,22 +106,7 @@ function Home() {
         <p className="wide-text">Dirty Details helps keep your vehicle clean without turning your schedule upside down. Choose a practical detail, a deeper reset, or a protection package built around your vehicle.</p>
       </section>
 
-      <section className="section split-section">
-        <div>
-          <p className="eyebrow">Dirty Details Blog</p>
-          <h2>Detailing tips and service updates</h2>
-          <p>Use this area for short posts, maintenance advice, before-and-after stories, and customer education.</p>
-          <Link className="text-link" to="/blog">View more posts</Link>
-        </div>
-        <div className="post-list">
-          {blogPosts.slice(0, 2).map((post) => (
-            <article className="mini-card" key={post.title}>
-              <h3>{post.title}</h3>
-              <p>{post.excerpt}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+
 
       <FollowBlock />
     </main>
@@ -291,11 +291,7 @@ function FollowBlock() {
     <section className="section follow-block centered">
       <p className="eyebrow">Follow Us</p>
       <h2>See recent work and updates.</h2>
-      <div className="social-row centered-row">
-        <a href={site.socials.facebook}>Facebook</a>
-        <a href={site.socials.instagram}>Instagram</a>
-        <a href={site.socials.youtube}>YouTube</a>
-      </div>
+      <SocialLinks className="centered-row" />
     </section>
   );
 }
@@ -309,11 +305,9 @@ function AnimatedRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/ceramic-coating" element={<CeramicCoating />} />
         <Route path="/packages" element={<Packages />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/store" element={<Store />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </div>
   )

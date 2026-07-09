@@ -3,13 +3,14 @@ export const site = {
   tagline: 'Mobile detailing with a clean finish.',
   subline: 'Interior, exterior, protection, and maintenance details built around your vehicle.',
   phone: '(314) 555-0199',
-  email: 'dirtydetailsllc@example.com',
+  email: 'Jeff@dirtydetailsstl.com',
   city: 'St. Louis, MO',
   address: 'Mobile service across the St. Louis area',
   hours: 'Appointments only',
   socials: {
-    facebook: 'https://facebook.com/',
-    instagram: 'https://instagram.com/',
+    tiktok: 'https://www.tiktok.com/@dirtydetailsstl',
+    facebook: 'https://www.facebook.com/profile.php?id=61592043050319',
+    instagram: 'https://www.instagram.com/dirtydetailsstl/',
     youtube: 'https://youtube.com/'
   }
 };
@@ -18,11 +19,8 @@ export const navLinks = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
   { label: 'Services', path: '/services' },
-  { label: 'Ceramic Coating', path: '/ceramic-coating' },
   { label: 'Packages', path: '/packages' },
-  { label: 'Contact', path: '/contact' },
-  { label: 'Blog', path: '/blog' },
-  { label: 'Store', path: '/store' }
+  { label: 'Contact', path: '/contact' }
 ];
 
 export const services = [
