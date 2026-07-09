@@ -270,6 +270,7 @@ async function handleContactSubmit(event) {
     firstName: formData.get('firstName'),
     lastName: formData.get('lastName'),
     email: formData.get('email'),
+    phone: formData.get('phone'),
     subject: formData.get('subject'),
     vehicleType: formData.get('vehicleType'),
     message: formData.get('message'),
@@ -308,6 +309,7 @@ async function handleContactSubmit(event) {
           <label>First name<input name="firstName" type="text" required /></label>
           <label>Last name<input name="lastName" type="text" /></label>
           <label>Your email<input name="email" type="email" required /></label>
+          <label>Phone number<input name="phone" type="tel" required /></label>
 <label>
   Vehicle type (Please Choose One)
   <select name="vehicleType" required defaultValue="">

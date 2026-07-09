@@ -12,7 +12,7 @@ export default async function handler(req, res) {
       firstName,
       lastName,
       email,
-      subject,
+      phone,
       vehicleType,
       message,
       photos = []
@@ -25,6 +25,7 @@ export default async function handler(req, res) {
       <p><strong>Name:</strong> ${fullName}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Vehicle Type:</strong> ${vehicleType}</p>
+      <p><strong>Phone:</strong> ${phone || 'No phone provided'}</p>
       <p><strong>Subject:</strong> ${subject || 'No subject provided'}</p>
       <p><strong>Message:</strong></p>
       <p>${message}</p>
