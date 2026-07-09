@@ -9,14 +9,14 @@ export default async function handler(req, res) {
 
   try {
     const {
-      firstName,
-      lastName,
-      email,
-      phone,
-      vehicleType,
-      message,
-      photos = []
-    } = req.body
+  firstName,
+  lastName,
+  email,
+  phone,
+  vehicleType,
+  message,
+  photos = []
+} = req.body
 
     const fullName = `${firstName || ''} ${lastName || ''}`.trim()
 
@@ -24,9 +24,8 @@ export default async function handler(req, res) {
       <h2>New Dirty Details Contact Request</h2>
       <p><strong>Name:</strong> ${fullName}</p>
       <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Vehicle Type:</strong> ${vehicleType}</p>
       <p><strong>Phone:</strong> ${phone || 'No phone provided'}</p>
-      <p><strong>Subject:</strong> ${subject || 'No subject provided'}</p>
+      <p><strong>Vehicle Type:</strong> ${vehicleType}</p>
       <p><strong>Message:</strong></p>
       <p>${message}</p>
     `
@@ -40,7 +39,7 @@ export default async function handler(req, res) {
       from: 'Dirty Details <noreply@dirtydetailsstl.com>',
       to: ['Jeff@dirtydetailsstl.com'],
       replyTo: email,
-      subject: subject || 'New Dirty Details Contact Request',
+      subject: 'New Dirty Details Contact Request',
       html,
       attachments
     })

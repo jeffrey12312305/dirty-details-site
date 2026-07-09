@@ -267,15 +267,14 @@ async function handleContactSubmit(event) {
   const photos = await Promise.all(files.map(fileToBase64))
 
   const payload = {
-    firstName: formData.get('firstName'),
-    lastName: formData.get('lastName'),
-    email: formData.get('email'),
-    phone: formData.get('phone'),
-    subject: formData.get('subject'),
-    vehicleType: formData.get('vehicleType'),
-    message: formData.get('message'),
-    photos
-  }
+  firstName: formData.get('firstName'),
+  lastName: formData.get('lastName'),
+  email: formData.get('email'),
+  phone: formData.get('phone'),
+  vehicleType: formData.get('vehicleType'),
+  message: formData.get('message'),
+  photos
+}
 
   const response = await fetch('/api/contact', {
     method: 'POST',
