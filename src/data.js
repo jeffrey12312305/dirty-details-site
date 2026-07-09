@@ -2,7 +2,7 @@ export const site = {
   name: 'Dirty Details LLC',
   tagline: 'Life Gets Dirty. We Fix It.',
   subline: 'Interior, Exterior, Protection, and Maintenance Plans built around your vehicle.',
-  phone: '(314) 555-0199',
+  phone: '(314) 413-8725',
   email: 'Jeff@dirtydetailsstl.com',
   city: 'St. Louis, MO',
   address: 'Mobile service across the St. Louis area',
