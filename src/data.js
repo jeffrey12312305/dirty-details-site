@@ -1,7 +1,7 @@
 export const site = {
   name: 'Dirty Details LLC',
-  tagline: 'Mobile detailing with a clean finish.',
-  subline: 'Interior, exterior, protection, and maintenance details built around your vehicle.',
+  tagline: 'Life Gets Dirty. We Fix It.',
+  subline: 'Interior, Exterior, Protection, and Maintenance Plans built around your vehicle.',
   phone: '(314) 555-0199',
   email: 'Jeff@dirtydetailsstl.com',
   city: 'St. Louis, MO',

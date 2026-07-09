@@ -89,13 +89,13 @@ function Home() {
       <section className="hero">
         <div className="hero-overlay" />
         <div className="hero-content">
-          <p className="eyebrow">Learn more about what we do</p>
+          <p className="eyebrow">Arrive dirty. Leave detailed.</p>
           <h1>{site.name}</h1>
           <p className="hero-quote">“{site.tagline}”</p>
           <p>{site.subline}</p>
           <div className="button-row">
-            <Link className="primary-btn" to="/contact">Contact us for a free assessment</Link>
-            <Link className="ghost-btn" to="/packages">View packages</Link>
+            <Link className="primary-btn" to="/contact">Contact Us For A Free Assessment</Link>
+            <Link className="ghost-btn" to="/packages">View Packages</Link>
           </div>
         </div>
       </section>
@@ -115,7 +115,7 @@ function Home() {
 
 function About() {
   return (
-    <PageShell eyebrow="About Dirty Details" title="Our mission">
+    <PageShell eyebrow="Learn more about what we do" title="Our mission">
       <section className="section centered">
         <h2>Correct + protect + maintain the appearance of your vehicle.</h2>
         <p className="wide-text">We focus on clean work, clear expectations, and services matched to your vehicle’s condition. No confusing upsell. No rushed walkthrough. You get a clear plan before the work starts.</p>
@@ -147,7 +147,7 @@ function About() {
 
 function Services() {
   return (
-    <PageShell eyebrow="Service menu" title="Services">
+    <PageShell eyebrow="Find the Detail Your Vehicle Needs" title="Services">
       <section className="section card-grid two">
         {services.map((service) => (
           <article className="service-card" key={service.title}>
@@ -185,7 +185,7 @@ function CeramicCoating() {
 function Packages() {
   return (
     <PageShell
-  eyebrow="Learn more about our services"
+  eyebrow="Packages We Offer"
   title={
     <span className="packages-title">
       <span>All</span>
@@ -228,21 +228,46 @@ function Packages() {
 
 function Contact() {
   return (
-    <PageShell eyebrow="Contact" title="Contact me">
+    <PageShell eyebrow="Get In Touch" title="Contact me">
       <section className="section contact-grid">
-        <form className="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form
+  className="contact-form"
+  action="https://formspree.io/f/YOUR_FORM_ID"
+  method="POST"
+  encType="multipart/form-data"
+>
           <label>First name<input name="firstName" type="text" required /></label>
           <label>Last name<input name="lastName" type="text" /></label>
           <label>Your email<input name="email" type="email" required /></label>
-          <label>Email subject<input name="subject" type="text" /></label>
-          <label>Your message<textarea name="message" rows="6" required /></label>
-          <label className="checkbox-line"><input name="permission" type="checkbox" /> I give permission to email me about this request.</label>
+          <label>
+  Vehicle type
+  <select name="vehicleType" required defaultValue="">
+    <option value="" disabled>Select vehicle type</option>
+    <option value="Sedan">Sedan</option>
+    <option value="SUV">SUV</option>
+    <option value="Large SUV">Large SUV</option>
+    <option value="Truck">Truck</option>
+  </select>
+</label>
+
+
+          <label>Your message (Include Specific Concerns)<textarea name="message" rows="6" required /></label>
+          <label>
+  Vehicle photos
+  <input
+    name="photos"
+    type="file"
+    accept="image/png, image/jpeg, image/webp"
+    multiple
+  />
+</label>
           <button className="primary-btn" type="submit">Send Message</button>
         </form>
 
         <aside className="contact-panel">
           <h2>Business Hours</h2>
           <p>Monday - Sunday</p>
+          <p>8:30am - 4:30pm</p>
           <p>{site.hours}</p>
           <h2>Contact</h2>
           <p>{site.phone}</p>

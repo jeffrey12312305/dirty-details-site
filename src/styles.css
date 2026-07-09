@@ -495,3 +495,112 @@ textarea {
   width: 100%;
   text-align: center;
 }
+
+.packages-title span:last-child {
+  position: relative;
+  left: -32px;
+}
+
+/* Center the top nav, then shift it slightly left */
+.site-header {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) auto minmax(120px, 1fr);
+  align-items: center;
+}
+
+.brand {
+  justify-self: start;
+}
+
+.nav-links {
+  justify-self: center;
+  transform: translateX(12px);
+}
+
+.call-link {
+  justify-self: end;
+}
+
+/* Keep mobile layout clean */
+@media (max-width: 950px) {
+
+
+  .site-header {
+    display: flex;
+  }
+
+  .nav-links {
+    transform: none;
+  }
+}
+
+/* Make main page headings about 15% smaller */
+.hero h1,
+.page-hero h1 {
+  font-size: clamp(2.9rem, 8.5vw, 7.2rem);
+}
+
+/* Keep the package title stacked and centered */
+.packages-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.packages-title span {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* Keep Customizable slightly left */
+.packages-title span:last-child {
+  position: relative;
+  left: -0px;
+}
+
+/* Make the top-left Dirty Details LLC logo text smaller too */
+.brand {
+  font-size: 0.85rem;
+}
+
+
+
+/* Make section titles like About Us and Service Menu about 15% bigger */
+.section h2,
+.package-intro h2 {
+  font-size: clamp(2rem, 4.6vw, 4rem);
+}
+
+.contact-form select,
+.contact-form input[type="file"] {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: #050505;
+  color: var(--text);
+  border-radius: 18px;
+  padding: 1rem;
+  font: inherit;
+}
+
+.contact-form select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.contact-form input[type="file"] {
+  cursor: pointer;
+}
+
+.contact-form input[type="file"]::file-selector-button {
+  border: 0;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #050505;
+  font-weight: 800;
+  padding: 0.75rem 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
