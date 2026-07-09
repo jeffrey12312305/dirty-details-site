@@ -239,14 +239,67 @@ function Contact() {
     setHasPhotos(false)
   }
 
+  function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+
+    reader.onload = () => {
+      const result = reader.result
+      const base64 = result.split(',')[1]
+
+      resolve({
+        name: file.name,
+        content: base64
+      })
+    }
+
+    reader.onerror = reject
+    reader.readAsDataURL(file)
+  })
+}
+
+async function handleContactSubmit(event) {
+  event.preventDefault()
+
+  const form = event.currentTarget
+  const formData = new FormData(form)
+  const files = Array.from(formData.getAll('photos')).filter((file) => file.size > 0)
+  const photos = await Promise.all(files.map(fileToBase64))
+
+  const payload = {
+    firstName: formData.get('firstName'),
+    lastName: formData.get('lastName'),
+    email: formData.get('email'),
+    subject: formData.get('subject'),
+    vehicleType: formData.get('vehicleType'),
+    message: formData.get('message'),
+    photos
+  }
+
+  const response = await fetch('/api/contact', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  })
+
+  if (!response.ok) {
+    alert('Message failed. Please try again or email Jeff@dirtydetailsstl.com.')
+    return
+  }
+
+  form.reset()
+  clearPhotos()
+  alert('Message sent. Thank you.')
+}
+
   return (
     <PageShell eyebrow="Get In Touch" title="Contact me">
       <section className="section contact-grid">
         <form
   className="contact-form"
-  action="https://formsubmit.co/Jeff@dirtydetailsstl.com"
-  method="POST"
-  encType="multipart/form-data"
+  onSubmit={handleContactSubmit}
 >
   <input type="hidden" name="_subject" value="New Dirty Details Contact Form Submission" />
   <input type="hidden" name="_captcha" value="true" />
