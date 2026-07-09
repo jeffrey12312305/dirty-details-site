@@ -184,7 +184,17 @@ function CeramicCoating() {
 
 function Packages() {
   return (
-    <PageShell eyebrow="Learn more about our services" title="All packages are customizable">
+    <PageShell
+  eyebrow="Learn more about our services"
+  title={
+    <span className="packages-title">
+      <span>All</span>
+      <span>Packages</span>
+      <span>Are</span>
+      <span>Customizable</span>
+    </span>
+  }
+>
       <section className="section centered package-intro">
         <p className="eyebrow">Our signature packages</p>
         <h2>Pick the service level your vehicle needs.</h2>
