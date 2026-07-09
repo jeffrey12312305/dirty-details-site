@@ -244,10 +244,14 @@ function Contact() {
       <section className="section contact-grid">
         <form
   className="contact-form"
-  action="https://formspree.io/f/mrewwaby"
+  action="https://formsubmit.co/Jeff@dirtydetailsstl.com"
   method="POST"
   encType="multipart/form-data"
 >
+  <input type="hidden" name="_subject" value="New Dirty Details Contact Form Submission" />
+  <input type="hidden" name="_captcha" value="true" />
+  <input type="hidden" name="_template" value="table" />
+  <input type="hidden" name="_next" value="https://dirtydetailsstl.com/contact" />
           <label>First name<input name="firstName" type="text" required /></label>
           <label>Last name<input name="lastName" type="text" /></label>
           <label>Your email<input name="email" type="email" required /></label>
