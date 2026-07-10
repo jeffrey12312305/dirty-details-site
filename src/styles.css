@@ -654,3 +654,9 @@ textarea {
   border-radius: 28px;
   background: #fff;
 }
+
+.timezone-note {
+  color: var(--gold);
+  font-weight: 800;
+  margin-top: 1rem;
+}

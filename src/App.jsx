@@ -234,6 +234,9 @@ function Appointments() {
         <p>
           Choose an available time below. After your request is submitted, I’ll review the details and confirm the appointment.
         </p>
+        <p className="timezone-note">
+        All appointments are scheduled in Central Time.
+        </p>
       </section>
 
       <section className="section appointment-frame-wrap">
@@ -316,7 +319,7 @@ async function handleContactSubmit(event) {
 }
 
   return (
-    <PageShell eyebrow="Get In Touch" title="Contact me">
+    <PageShell eyebrow="Get In Touch" title="Contact Us">
       <section className="section contact-grid">
         <form
   className="contact-form"
