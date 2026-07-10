@@ -21,7 +21,7 @@ export const navLinks = [
   { label: 'About', path: '/about' },
   { label: 'Services', path: '/services' },
   { label: 'Packages', path: '/packages' },
-  { label: 'Contact', path: '/contact' }
+  { label: 'Contact', path: '/contact' },
   { label: 'Appointments', path: '/appointments' },
 ];
 
