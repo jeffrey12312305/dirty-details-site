@@ -7,6 +7,7 @@ export const site = {
   city: 'St. Louis, MO',
   address: 'Mobile service across the St. Louis area',
   hours: 'Appointments only',
+  bookingUrl: 'https://calendar.app.google/HQYLjwBqkmnbKtvw7',
   socials: {
     tiktok: 'https://www.tiktok.com/@dirtydetailsstl',
     facebook: 'https://www.facebook.com/profile.php?id=61592043050319',
@@ -21,6 +22,7 @@ export const navLinks = [
   { label: 'Services', path: '/services' },
   { label: 'Packages', path: '/packages' },
   { label: 'Contact', path: '/contact' }
+  { label: 'Appointments', path: '/appointments' },
 ];
 
 export const services = [

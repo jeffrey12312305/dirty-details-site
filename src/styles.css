@@ -637,3 +637,20 @@ textarea {
 .primary-btn {
   cursor: pointer;
 }
+
+.appointment-intro {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.appointment-frame-wrap {
+  padding-top: 0;
+}
+
+.appointment-frame {
+  width: 100%;
+  min-height: 760px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  background: #fff;
+}

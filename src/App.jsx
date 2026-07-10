@@ -227,6 +227,27 @@ function Packages() {
   );
 }
 
+function Appointments() {
+  return (
+    <PageShell eyebrow="Book Online" title="Schedule an appointment">
+      <section className="section centered appointment-intro">
+        <p>
+          Choose an available time below. After your request is submitted, I’ll review the details and confirm the appointment.
+        </p>
+      </section>
+
+      <section className="section appointment-frame-wrap">
+        <iframe
+          className="appointment-frame"
+          src={site.bookingUrl}
+          title="Dirty Details appointment booking"
+          loading="lazy"
+        />
+      </section>
+    </PageShell>
+  )
+}
+
 function Contact() {
   const photoInputRef = useRef(null)
   const [hasPhotos, setHasPhotos] = useState(false)
@@ -428,6 +449,7 @@ function AnimatedRoutes() {
         <Route path="/packages" element={<Packages />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Home />} />
+        <Route path="/appointments" element={<Appointments />} />
       </Routes>
     </div>
   )
