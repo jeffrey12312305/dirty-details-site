@@ -1,5 +1,5 @@
 export const site = {
-  name: 'Dirty Details LLC',
+  name: 'Dirty Details',
   tagline: 'Life Gets Dirty. We Fix It.',
   subline: 'Interior, Exterior, Protection, and Maintenance Plans built around your vehicle.',
   phone: '(314) 413-8725',
